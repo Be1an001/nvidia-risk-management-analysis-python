@@ -61,7 +61,7 @@ The main inputs were:
 - public business and news sources
 - manually built risk scores
 - project working Excel files
-- scenario assumptions for six-quarter sales
+- manually defined scenario assumptions for six-quarter sales
 - simulated revenue outputs
 
 Supporting project working files are kept in:
@@ -101,6 +101,8 @@ The final scoring highlighted two high-priority risks:
 - Supply Chain Disruptions
 - Geopolitical Tensions
 
+In this GitHub version, the risk register and scoring details are mainly preserved through the archive working files and the selected figures shown here.
+
 ### Supporting visuals
 
 - [Risk calculation sheet](../outputs/figures/nvidia-risk-calculation-sheet.png)
@@ -118,6 +120,8 @@ That visual helped confirm that the project should focus more on:
 
 - supply chain risk
 - geopolitical risk
+
+In the public repo, that heat map is kept as a supporting figure rather than rebuilt step by step in the notebook.
 
 ### Figure
 
@@ -157,10 +161,10 @@ The notebook in this repo is:
 
 The notebook focuses on the main public analysis logic:
 
-- final risk score setup
-- 1-9 scale heat map
+- an earlier scenario comparison stage
 - updated Monte Carlo simulation
 - updated CDF comparison
+- the later updated three-path scenario comparison
 
 ### Selected code idea
 
@@ -181,6 +185,12 @@ def monte_carlo_simulation(sales_data, simulations=10000, quarters=6):
 ```
 
 This part mattered because it turned the scenario assumptions into a simple six-quarter revenue impact comparison.
+
+In this repo, the notebook is mainly the simulation part of the project. The risk register, scoring setup, and heat map are preserved through archive/source artifacts and selected visuals instead of being fully recreated in notebook code.
+
+The notebook also keeps an earlier comparison stage and a later updated three-path stage in the same file. The later updated stage is the main public-facing result used in the final comparison.
+
+The simulation values and scenario probabilities are manually defined project assumptions. The notebook does not set a fixed random seed, so reruns may vary slightly.
 
 ## 10. Monte Carlo and CDF Result
 

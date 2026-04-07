@@ -10,6 +10,8 @@ I used NVIDIA as the case company and studied how major business risks can be id
 
 I cleaned this repo up for GitHub, but I still kept the main report, the final slides, selected figures, one notebook, and a small archive of original project files.
 
+The full repo story is broader than the notebook alone. The notebook mainly reproduces the scenario modeling / Monte Carlo / CDF part of the project, while the risk register, scoring setup, and heat map are preserved through the archive files and selected figures.
+
 ## Business Problem
 
 NVIDIA has strong growth in GPUs and AI, but it also faces major business risks. In this project, the biggest ones were supply chain dependence on TSMC and geopolitical tensions around U.S.-China relations and Taiwan.
@@ -86,6 +88,8 @@ Instead, the project used:
 - manually defined scenario assumptions
 - simulated revenue outputs
 
+The simulation inputs and probabilities in the notebook are manually defined project assumptions. The notebook also does not set a fixed random seed, so reruns can vary slightly.
+
 Please see [data/README.md](data/README.md) for details.
 
 ## Repository Guide
@@ -98,6 +102,8 @@ Please see [data/README.md](data/README.md) for details.
 - [Outputs note](outputs/README.md)
 
 ## Selected Visuals
+
+These are selected supporting visuals preserved from the project materials. They are curated public-facing figures, not a claim that every figure below is recreated directly in notebook code.
 
 ### Risk calculation and risk register
 

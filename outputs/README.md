@@ -12,6 +12,8 @@ These figures are the clearest visual summary of the final project:
 - geopolitical risk modeling
 - scenario-based revenue impact
 
+These are selected supporting visuals preserved from the project materials. They are curated public-facing figures, not a claim that every figure here was generated directly from the notebook.
+
 ## Figure List
 
 ### 1. Risk scoring
