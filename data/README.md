@@ -1,86 +1,73 @@
-# Data Note
+# Data and Assumptions
 
-## Overview
+This repository does not include a large raw dataset, CSV file, SQL database, or private company data. The project is a scenario-based risk analytics case study built from public sources, manually structured risk scores, and manually defined simulation assumptions.
 
-This project is different from a typical analytics project with a shared CSV or SQL dataset.
+## Main Inputs
 
-The main inputs for this project were:
+The project used three main input types:
 
-- public company filings
-- public business and news sources
-- manually structured risk scores
-- manually prepared working Excel files
-- manually defined scenario assumptions
-- simulated six-quarter revenue outputs
+- public company and industry sources for business context
+- small project working files for risk scoring and risk register structure
+- scenario assumptions entered directly in the notebook
 
-## What Data Is Actually Used Here
+The working files are stored in the `archive/` folder:
 
-This repository does **not** include a large raw tabular dataset.
+- [Risk calculation sheet](../archive/nvidia-risk-calculation-sheet-original.xlsx)
+- [Risk register](../archive/nvidia-risk-register-original.xlsx)
+- [Treatment and response plan](../archive/nvidia-risk-treatment-and-response-plan-original.docx)
 
-The project mainly used:
+These files are project artifacts, not raw downloaded datasets.
 
-1. **Public source material for business context**
-2. **Small project working files for risk scoring**
-3. **Scenario assumptions used inside the notebook**
+## Public Source Baseline
 
-## Public Source Used for Company Baseline
+The main company baseline source referenced in the project is NVIDIA's 2024 annual report / Form 10-K.
 
-The most important public source in this project was NVIDIA’s annual report / Form 10-K.
-
-### NVIDIA 2024 Annual Report (Form 10-K)
-Direct source:
+Source:
 https://s201.q4cdn.com/141608511/files/doc_financials/2024/ar/NVIDIA-2024-Annual-Report.pdf
 
-I used this source as the main baseline for company background and revenue context.
+I did not upload the NVIDIA annual report PDF directly into this repository because it is an external public source, not my own project output.
 
-## Why I Did Not Upload the NVIDIA Annual Report to This Repo
+## Risk Scoring Data
 
-I did not include the NVIDIA annual report PDF directly in this repository because:
-
-- it is a large external source file
-- it is not my own project output
-- the report is already publicly available from NVIDIA
-- linking to the original source keeps the repo cleaner and easier to review
-
-So for GitHub, I decided to keep the source link here instead of re-uploading the full PDF.
-
-## Project Working Files
-
-This project also used small manually structured working files created during the course process.
-
-Those original files are kept in the `archive/` folder:
-
-- [`../archive/nvidia-risk-calculation-sheet-original.xlsx`](../archive/nvidia-risk-calculation-sheet-original.xlsx)
-- [`../archive/nvidia-risk-register-original.xlsx`](../archive/nvidia-risk-register-original.xlsx)
-
-These are not raw downloaded datasets. They are project working files used to organize:
+The archived workbooks organize the manually scored risk information, including:
 
 - risk names
+- risk causes and consequences
 - chance scores
 - impact scores
-- final risk scores
+- risk scores
+- priority labels
 - mitigation notes
 - risk owner notes
 
+The final risk register contains six risks and identifies geopolitical tensions and supply chain disruptions as the highest-priority risks in the final scoring.
+
 ## Notebook Input Style
 
-The notebook in this repo does **not** read a CSV or database file.
+The notebook does not load a CSV file or query a database. It defines scenario values directly in code and uses those values to run the Monte Carlo comparison.
 
-Instead, it uses manually defined values such as:
+The notebook assumptions include:
 
-- final risk scores for the heat map
-- final scenario values for Monte Carlo analysis
-- labels for risk paths and categories
+- manually defined scenario paths
+- manually defined quarterly sales values
+- scenario weights for calm, moderate, and intense cases
+- a six-quarter simulation horizon
 
-## Main Public Sources Mentioned in the Project
+Because these inputs are manually defined, the output should be read as decision support rather than a validated revenue forecast.
 
-Examples of public sources used in the project include:
+## Reproducibility Caveat
 
-- NVIDIA 2024 Annual Report (Form 10-K)
-- NVIDIA SWOT analysis
-- NASA Risk Management Handbook
-- public business and news articles referenced in the final report
+The notebook does not set a fixed random seed. If the notebook is rerun, the exact Monte Carlo summary values may change slightly.
 
-## Public Repository Note
+## Privacy and Scope
 
-No private company data, internal business data, or personal data is included in this repository.
+No private company data, internal NVIDIA data, customer-level data, or personal data is included in this repository.
+
+The repository does not contain:
+
+- raw operational data
+- SQL database tables
+- a data warehouse model
+- a dashboard data source
+- machine learning training data
+- GenAI or LLM data inputs

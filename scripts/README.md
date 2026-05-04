@@ -1,59 +1,82 @@
 # Scripts
 
+This folder contains the main notebook used in the public GitHub version of the project.
+
 ## Main Notebook
 
-- [`01_nvidia_risk_analysis.ipynb`](01_nvidia_risk_analysis.ipynb)
+- [01_nvidia_risk_analysis.ipynb](01_nvidia_risk_analysis.ipynb)
 
-This notebook is the main code file in the public GitHub version of this project.
+The notebook focuses on the simulation part of the risk analysis. It does not rebuild the full course project from scratch.
 
-It is meant to show the parts of the project that are most useful for public review:
+## What the Notebook Covers
 
-- an earlier scenario comparison stage
-- updated Monte Carlo simulation
-- updated CDF-style comparison
-- the later three-path scenario comparison used in the final public-facing result
+The notebook includes:
 
-## Why I Used a Notebook Here
+- an earlier two-path scenario comparison
+- an updated three-path scenario comparison
+- Monte Carlo simulation logic
+- histogram and CDF visualization
+- summary statistics for simulated six-quarter sales outcomes
 
-For GitHub, I kept the code in notebook form because it is easier to review step by step.
+The later three-path comparison is the main public-facing simulation result for the repository. It compares:
 
-This also fits the project better than a long script file, since the public version is meant to be more readable for recruiters, interviewers, and GitHub visitors.
+- Regulatory Compliance
+- Manufacturing Delays
+- Trade Restrictions
 
-## Scope of the Notebook
+## What the Notebook Does Not Cover
 
-The notebook is focused on the main analysis logic behind the public version of the project.
+The notebook does not recreate every part of the original project. Several important project components are preserved through reports, archived files, and selected figures instead.
 
-It mainly reproduces the simulation portion of the project.
+The notebook does not fully rebuild:
 
-The risk register, scoring setup, and heat map are preserved through the archive working files and selected visuals, rather than rebuilt step by step in notebook code.
+- the original risk register
+- the chance-impact scoring workbook
+- the heat map creation process
+- the influence diagram design process
+- the scenario tree design process
+- the final report or briefing slides
 
-It also keeps an earlier comparison stage and a later updated three-path scenario stage in the same file. The later updated stage is the main public-facing result used in the final repo story.
+Those materials are available elsewhere in the repository.
 
-It does not try to recreate every document or every manually designed diagram from the original course submission.
+## Assumption and Simulation Notes
 
-The influence diagram and scenario tree are kept as exported visuals in:
+The simulation values and probabilities are manually defined project assumptions. The result should be interpreted as a scenario-based comparison, not as a validated forecast of NVIDIA revenue.
 
-- [`../outputs/figures/latest-influence-diagram.png`](../outputs/figures/latest-influence-diagram.png)
-- [`../outputs/figures/updated-scenario-tree.png`](../outputs/figures/updated-scenario-tree.png)
+The notebook uses:
 
-## Reproducibility Note
+- 10,000 simulation runs
+- a six-quarter horizon
+- manually defined scenario values
+- NumPy random sampling
 
-The simulation values and probabilities in the notebook are manually defined project assumptions.
+The notebook does not set a fixed random seed, so reruns may produce slightly different summary values.
 
-The notebook does not set a fixed random seed, so reruns may vary slightly.
+## Environment Notes
 
-## Related Files
-
-- [Project walkthrough](../walkthrough/project-walkthrough.md)
-- [Final report](../reports/aly6130-final-report.pdf)
-- [Final slides](../slides/aly6130-module-6-briefing.pdf)
-- [Data note](../data/README.md)
-
-## Environment Note
-
-Main packages used in the notebook:
+The notebook uses the packages listed in the repository-level [requirements.txt](../requirements.txt):
 
 - numpy
 - pandas
 - matplotlib
-- notebook / jupyter
+- jupyter
+
+To review or rerun the notebook locally:
+
+```bash
+pip install -r ../requirements.txt
+jupyter notebook 01_nvidia_risk_analysis.ipynb
+```
+
+Run the commands from inside the `scripts/` folder, or adjust the path if running from the repository root.
+
+## Related Files
+
+- [Project walkthrough](../walkthrough/project-walkthrough.md)
+- [Data and assumption notes](../data/README.md)
+- [Outputs notes](../outputs/README.md)
+- [Final report](../reports/aly6130-final-report.pdf)
+- [Final slides](../slides/aly6130-module-6-briefing.pdf)
+- [Influence diagram](../outputs/figures/latest-influence-diagram.png)
+- [Scenario tree](../outputs/figures/updated-scenario-tree.png)
+- [Monte Carlo and CDF figure](../outputs/figures/updated-cumulative-distribution-function.png)

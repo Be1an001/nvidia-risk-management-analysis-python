@@ -1,16 +1,16 @@
 # Project Walkthrough
 
-## 1. Project Overview
+This walkthrough explains the flow of the NVIDIA risk management case study from business framing to scenario-based simulation and response planning.
 
-This project was my final project for **ALY6130: Risk Management for Analytics**.
+## Project Overview
 
-I used NVIDIA as the case company and built a structured risk management analysis around one main question:
+This project was my individual final project for **ALY6130: Risk Management for Analytics**. I used NVIDIA as the case company and built a structured risk analytics workflow around one main question:
 
 **How can NVIDIA identify, prioritize, and respond to major business risks in a practical way?**
 
-This GitHub version is my cleaned public version. I kept the final report, the final briefing slides, selected visuals, one notebook, and a small archive of original project files.
+The GitHub version keeps the final report, briefing slides, selected figures, one notebook, and archived working files that support the project story.
 
-Main links:
+Main files:
 
 - [Final report](../reports/aly6130-final-report.pdf)
 - [Final briefing slides](../slides/aly6130-module-6-briefing.pdf)
@@ -18,233 +18,155 @@ Main links:
 - [Data note](../data/README.md)
 - [Outputs note](../outputs/README.md)
 
-## 2. Business Problem
+## Business Problem
 
-NVIDIA has strong growth in GPUs and AI, but it also faces several risks that could hurt operations and revenue.
+NVIDIA is a useful risk analytics case because its growth depends on AI demand, GPU leadership, and semiconductor supply chains. At the same time, the company faces risks that could affect production, sales, or investor confidence.
 
-The biggest concerns in this project were:
+The project considered six major risk themes:
 
-- dependence on TSMC
+- supply chain disruptions
 - export restrictions
-- competition from AMD and Intel
-- geopolitical tensions around U.S.-China relations and Taiwan
-- lower-cost AI competition
+- strong competition
+- geopolitical tensions
+- emergence of cost-effective AI models
 - market valuation volatility
 
-The final version focused most on two high-priority risks:
+The analysis focused most on supply chain disruptions and geopolitical tensions because they were identified as the highest-priority risks in the final scoring.
 
-- Supply Chain Disruptions
-- Geopolitical Tensions
+## Data and Assumptions
 
-## 3. Original Course Goal
+This project is not built around a raw transaction dataset. The main inputs were:
 
-The course project was built step by step across multiple modules.
-
-The final assignment asked for a full risk management project that included:
-
-- risk identification
-- qualitative and quantitative assessment
-- KRI
-- scenario modeling
-- treatment and response planning
-- communication and continuous monitoring
-
-I kept that overall structure in the final version of this repo.
-
-## 4. Project Inputs and Data Structure
-
-This project is not built around a large downloaded dataset.
-
-The main inputs were:
-
-- public company filings
-- public business and news sources
+- public company filings and business sources
 - manually built risk scores
-- project working Excel files
-- manually defined scenario assumptions for six-quarter sales
-- simulated revenue outputs
+- archived Excel workbooks
+- manually defined scenario assumptions
+- simulated six-quarter sales outputs
 
-Supporting project working files are kept in:
+The working files are preserved in the archive folder:
 
-- [Risk calculation sheet (original)](../archive/nvidia-risk-calculation-sheet-original.xlsx)
-- [Risk register (original)](../archive/nvidia-risk-register-original.xlsx)
+- [Risk calculation sheet](../archive/nvidia-risk-calculation-sheet-original.xlsx)
+- [Risk register](../archive/nvidia-risk-register-original.xlsx)
+- [Treatment and response plan](../archive/nvidia-risk-treatment-and-response-plan-original.docx)
 
-See the full note here:
+The notebook defines scenario values directly in code. These assumptions are useful for decision-support comparison, but they should not be treated as a validated revenue forecast.
 
-- [data/README.md](../data/README.md)
+## Workflow
 
-## 5. Workflow
+The project followed this workflow:
 
-My workflow for this project was:
+1. Identify major NVIDIA business risks.
+2. Build a six-risk register.
+3. Score risks by chance and impact.
+4. Use a heat map to narrow the focus.
+5. Build an influence diagram and scenario tree.
+6. Simulate six-quarter scenario outcomes with Monte Carlo analysis.
+7. Compare scenario distributions with histograms and CDF curves.
+8. Translate the results into mitigation, KRI, contingency, and communication planning.
 
-1. Identify major NVIDIA business risks  
-2. Build a six-risk register  
-3. Score risks by chance and impact  
-4. Use a heat map to narrow the focus  
-5. Build an influence diagram and scenario tree  
-6. Summarize six-quarter revenue impact with Monte Carlo analysis  
-7. Translate the results into mitigation, KRI, and response planning  
-
-## 6. Final Risk Register
+## Risk Register and Scoring
 
 The final project used six risks:
 
-1. Supply Chain Disruptions  
-2. Export Restrictions  
-3. Strong Competition  
-4. Geopolitical Tensions  
-5. Emergence of Cost-Effective AI Models  
-6. Market Valuation Volatility  
+1. Supply Chain Disruptions
+2. Export Restrictions
+3. Strong Competition
+4. Geopolitical Tensions
+5. Emergence of Cost-Effective AI Models
+6. Market Valuation Volatility
 
-The final scoring highlighted two high-priority risks:
+The final scoring identified two high-priority risks:
 
-- Supply Chain Disruptions
 - Geopolitical Tensions
+- Supply Chain Disruptions
 
-In this GitHub version, the risk register and scoring details are mainly preserved through the archive working files and the selected figures shown here.
-
-### Supporting visuals
-
-- [Risk calculation sheet](../outputs/figures/nvidia-risk-calculation-sheet.png)
-- [Risk register](../outputs/figures/nvidia-risk-register.png)
+The risk register and scoring details are mainly preserved through the archived workbooks and selected figures.
 
 ![Risk calculation sheet](../outputs/figures/nvidia-risk-calculation-sheet.png)
 
 ![Risk register](../outputs/figures/nvidia-risk-register.png)
 
-## 7. Heat Map Logic
+## Heat Map
 
-After scoring the risks, I used a heat map to show which risks were both high chance and high impact.
-
-That visual helped confirm that the project should focus more on:
-
-- supply chain risk
-- geopolitical risk
-
-In the public repo, that heat map is kept as a supporting figure rather than rebuilt step by step in the notebook.
-
-### Figure
+The heat map visualizes the chance and impact scores for the six risks. It helps show why the project narrowed attention to supply chain and geopolitical exposure.
 
 ![Heat map](../outputs/figures/nvidia-risks-heat-map-1-9-scale.png)
 
-## 8. Influence Diagram and Scenario Tree
+## Influence Diagram and Scenario Tree
 
-In the later project stage, I focused more on **Geopolitical Tensions** as the main modeling case.
-
-The influence diagram connected geopolitical instability to:
-
-- trade restrictions
-- manufacturing delays
-- supply chain disruptions
-- sales impact
-
-The updated scenario tree translated those ideas into three main paths:
-
-- regulatory compliance
-- manufacturing delays
-- trade restrictions
-
-### Figures
-
-- [Influence diagram](../outputs/figures/latest-influence-diagram.png)
-- [Scenario tree](../outputs/figures/updated-scenario-tree.png)
+After the scoring step, the later analysis focused on geopolitical tension as the main scenario case. The influence diagram connects geopolitical instability to trade restrictions, manufacturing delays, supply chain disruptions, and sales impact.
 
 ![Influence diagram](../outputs/figures/latest-influence-diagram.png)
 
-![Scenario tree](../outputs/figures/updated-scenario-tree.png)
-
-## 9. Notebook Work
-
-The notebook in this repo is:
-
-- [01_nvidia_risk_analysis.ipynb](../scripts/01_nvidia_risk_analysis.ipynb)
-
-The notebook focuses on the main public analysis logic:
-
-- an earlier scenario comparison stage
-- updated Monte Carlo simulation
-- updated CDF comparison
-- the later updated three-path scenario comparison
-
-### Selected code idea
-
-```python
-def monte_carlo_simulation(sales_data, simulations=10000, quarters=6):
-    results = []
-    for _ in range(simulations):
-        total_sales = 0
-        for _ in range(quarters):
-            scenario = np.random.choice(
-                ["Calm", "Moderate", "Intense"],
-                p=[0.25, 0.50, 0.25]
-            )
-            sales = np.random.choice(sales_data[scenario])
-            total_sales += sales
-        results.append(total_sales)
-    return results
-```
-
-This part mattered because it turned the scenario assumptions into a simple six-quarter revenue impact comparison.
-
-In this repo, the notebook is mainly the simulation part of the project. The risk register, scoring setup, and heat map are preserved through archive/source artifacts and selected visuals instead of being fully recreated in notebook code.
-
-The notebook also keeps an earlier comparison stage and a later updated three-path stage in the same file. The later updated stage is the main public-facing result used in the final comparison.
-
-The simulation values and scenario probabilities are manually defined project assumptions. The notebook does not set a fixed random seed, so reruns may vary slightly.
-
-## 10. Monte Carlo and CDF Result
-
-The updated final version compared three paths:
+The scenario tree translates that logic into three scenario paths:
 
 - Regulatory Compliance
 - Manufacturing Delays
 - Trade Restrictions
 
-My main read from the final comparison was:
+![Scenario tree](../outputs/figures/updated-scenario-tree.png)
 
-- Regulatory Compliance had a narrower and safer range
-- Manufacturing Delays showed more uncertainty
-- Trade Restrictions showed the biggest downside risk
+## Notebook and Simulation Logic
 
-### Figure
+The notebook is:
+
+- [01_nvidia_risk_analysis.ipynb](../scripts/01_nvidia_risk_analysis.ipynb)
+
+The notebook focuses on the simulation portion of the project. It includes an earlier comparison stage and a later three-path comparison. The later three-path comparison is the main public-facing simulation result.
+
+The simulation uses:
+
+- 10,000 runs
+- six-quarter total sales outcomes
+- manually defined scenario values
+- scenario weights of 0.25, 0.50, and 0.25 for the calm, moderate, and intense cases
+
+The notebook does not set a fixed random seed, so reruns can produce slightly different results.
+
+## Monte Carlo and CDF Result
+
+The final simulation compares:
+
+- Regulatory Compliance
+- Manufacturing Delays
+- Trade Restrictions
+
+The result is best read as a relative scenario comparison. The CDF output suggests that trade restrictions have the clearest downside risk under the project assumptions. Regulatory compliance appears narrower and more stable, while manufacturing delays show more spread.
+
+This does not mean the project predicts NVIDIA's actual future revenue. It shows how the project assumptions behave in a simple simulation.
 
 ![Monte Carlo and CDF](../outputs/figures/updated-cumulative-distribution-function.png)
 
-## 11. Final Insight
+## Business Interpretation
 
-My main conclusion was that NVIDIA’s biggest risks were not only general business threats.
+The main project interpretation is that risk scoring can help narrow a broad list of business risks into a smaller set of priorities. For this case, supply chain disruptions and geopolitical tensions became the most important risks to monitor.
 
-The more useful point was that:
+The scenario analysis then connects those risks to practical planning ideas:
 
-- the risks could be structured and scored
-- the top risks could be translated into scenario logic
-- the analysis could support practical action ideas like supplier diversification, fab expansion, KRI thresholds, and faster response planning
+- diversify suppliers
+- invest in more stable manufacturing locations
+- monitor export policy changes
+- define KRI thresholds for escalation
+- keep medium-priority risks under review
 
-So the project became more like business risk decision support, not just a class report.
+## Limitations
 
-## 12. What I Would Say in an Interview
+- This is a course-based case study, not a real NVIDIA engagement.
+- The project does not use private NVIDIA data or raw operational data.
+- Scenario probabilities and sales values are manually defined.
+- The Monte Carlo results support decision-support comparison, not validated forecasting.
+- The notebook does not set a fixed random seed.
+- The repository does not contain a dashboard app, SQL pipeline, machine learning model, GenAI component, MLOps workflow, or production deployment.
+- Some archived materials preserve earlier project versions, so the final story should be read across the README, final report, notebook, and selected figures.
+- Some supporting artifacts come from different course stages, so exact scores or scenario values should be checked against the final report, archived workbooks, and notebook before reuse.
 
-A simple way I would explain this project is:
+## Related Materials
 
-> This was my individual risk management analytics project on NVIDIA.  
-> I started with a six-risk register and used scoring plus a heat map to narrow the focus to supply chain and geopolitical risk.  
-> Then I used scenario modeling and Monte Carlo analysis to show how those risks could affect revenue over the next six quarters, and I connected the results to mitigation planning and KRI design.
-
-## 13. File Map
-
-### Main public files
 - [README](../README.md)
+- [Data note](../data/README.md)
+- [Script note](../scripts/README.md)
+- [Outputs note](../outputs/README.md)
 - [Final report](../reports/aly6130-final-report.pdf)
 - [Final slides](../slides/aly6130-module-6-briefing.pdf)
 - [Notebook](../scripts/01_nvidia_risk_analysis.ipynb)
-
-### Supporting notes
-- [Data note](../data/README.md)
-- [Scripts note](../scripts/README.md)
-- [Outputs note](../outputs/README.md)
-
-### Archive files
-- [Original treatment and response plan](../archive/nvidia-risk-treatment-and-response-plan-original.docx)
-- [Portfolio PDF v1](../archive/aly6130-nvidia-risk-portfolio-v1.pdf)
-- [Risk calculation sheet (original)](../archive/nvidia-risk-calculation-sheet-original.xlsx)
-- [Risk register (original)](../archive/nvidia-risk-register-original.xlsx)
+- [Archive folder](../archive)
